@@ -1,0 +1,25 @@
+{
+  "name": "miliastra-pipeline",
+  "version": "0.1.0",
+  "description": "用代码构建原神千星奇域关卡：控件预算模型、精灵编码、初始化性能与踩坑笔记",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "budget": "node src/budget.mjs",
+    "sprites": "node src/compile-sprites.mjs",
+    "demo:budget": "node src/budget.mjs --controls 18415 --sprites klee:4686,dori:6565"
+  },
+  "optionalDependencies": {
+    "sharp": "^0.33.0"
+  },
+  "keywords": [
+    "genshin",
+    "miliastra",
+    "ugc",
+    "level-design",
+    "sprite-encoding"
+  ],
+  "engines": {
+    "node": ">=20"
+  }
+}

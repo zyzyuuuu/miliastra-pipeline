@@ -1,0 +1,15 @@
+node_modules/
+package-lock.json
+
+# 生成物
+sprites.json
+out/
+*.log
+
+# 不要把美术资源提交进来。
+# 原神素材版权归米哈游，本仓库只提供处理工具，不提供素材。
+assets/*.png
+assets/*.jpg
+
+# 关卡文件里嵌着美术资源，同样不提交
+*.gil
