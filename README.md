@@ -1,5 +1,7 @@
 # miliastra-pipeline
 
+**Build Genshin Miliastra Wonderland (千星奇域) levels in code, not by hand** — a construction pipeline from idea to an importable `.gil` save, plus the engineering notes behind it. Includes an [Agent Skill](skills/miliastra-level-dev/SKILL.md) that lets AI assistants (WorkBuddy / Claude Code, etc.) follow the whole workflow.
+
 用代码而不是鼠标，构建原神「千星奇域」关卡。
 
 一个人在两天里做出了一个 18,415 个控件、17.8 MiB、带加载幕、祈愿系统、商店经济和 BGM 的完整关卡。这个仓库是那两天里能复用的部分：**一套从源码到 `.gil` 的构建管线，和一本把坑挖出来的笔记。**
@@ -80,7 +82,7 @@ const ov = Math.min(1.2, Math.max(0.3, bw * scale * 0.12));
 node src/compile-sprites.mjs ./assets
 
 # 2. 算一下你的控件预算够不够
-node src/budget.mjs --controls 18415 --bytes-per-control 1054
+node src/budget.mjs --controls 18415
 
 # 3. 构建（需要先在环境变量里指向工具目录）
 MILIASTRA_TOOLS=/path/to/miliastra-ugc-tools node your-build.mjs
@@ -97,7 +99,7 @@ MILIASTRA_TOOLS=/path/to/miliastra-ugc-tools node your-build.mjs
 | 文档 | 讲什么 |
 |---|---|
 | [00-为什么把关卡当程序写](docs/00-为什么把关卡当程序写.md) | 手工工作流的实际成本，以及代码化的边界在哪 |
-| [01-控件预算模型](docs/01-控件预算模型.md) | 1,054 B/控件怎么来的，怎么用这个数做设计决策 |
+| [01-控件预算模型](docs/01-控件预算模型.md) | 1,020 B/控件怎么标定的，怎么用这个数做设计决策 |
 | [02-初始化性能](docs/02-初始化性能.md) | 142,908 次调用的完整推导，以及三类能砍的调用 |
 | [03-精灵编码](docs/03-精灵编码.md) | PNG→矩形的分块算法、容差标定表、外扩闭缝 |
 | [04-踩坑清单](docs/04-踩坑清单.md) | 12 条硬坑，每条都有现象、原因、修法 |
