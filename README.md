@@ -105,6 +105,24 @@ MILIASTRA_TOOLS=/path/to/miliastra-ugc-tools node your-build.mjs
 
 ---
 
+## Skill 版本
+
+`skills/miliastra-level-dev/` 是把这套流程封装成的 Agent Skill（Claude Skills 格式）：
+装进任意支持 skill 的助手（WorkBuddy / Claude Code 等），它就知道什么时候该用哪个模型、哪份标定表、哪条坑。
+
+```bash
+# 安装到用户级（WorkBuddy）
+cp -r skills/miliastra-level-dev ~/.workbuddy/skills/
+
+# 配套底层工具（查官方文档 / 读写 .gil 二进制），用户自备：
+# https://github.com/QHY8IV/miliastra-ugc
+```
+
+生态里已有"查文档"和"真机试玩"的工具型 skill，这份补的是中间缺的环节：
+**从想法到可导入关卡的工程流程**。三者不冲突，分工见 SKILL.md 的边界表。
+
+---
+
 ## 一个提醒
 
 这套东西的价值不在于"能自动生成控件"，而在于**它让你能快速试错**。
